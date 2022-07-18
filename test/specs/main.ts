@@ -2,8 +2,9 @@ import {Main} from '../pageobjects/MainPage';
 import * as assert from 'assert';
 
 describe('The main page', () => {
+
     it('shoud open', async() => {
-       await Main.open(Main.mainUrl);
+       await Main.open();
        await browser.pause(2000);
 
        const acrtualUrl = await browser.getUrl();
@@ -11,6 +12,7 @@ describe('The main page', () => {
        
        assert(acrtualUrl ===  Main.mainUrl);
     });
+
 });
 
 
