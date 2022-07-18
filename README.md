@@ -7,6 +7,7 @@ This home project on automation QA by using the WebdriverIO + TypeScript
 3. ChaiJS                       npm install chai
 4. Assert from WebdriverIO      install with webdriverIO 
 
-# It was using paterns
+# Using patterns
 5. PageObject
 6. Async/wait
+7. OOP: Abstraction, encapsulation, inheritance, polymorphism

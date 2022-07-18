@@ -1,12 +1,12 @@
+import { BasePage } from "./BasePage";
 
 
-class MainPage {
-
-    // @param path path of the sub page (e.g. /path/to/page.html)
-    public open (path: string) {
-        return browser.url(`http://the-internet.herokuapp.com/${path}`)
-    }
+export class MainPage extends BasePage {
     
+    mainUrl = 'http://the-internet.herokuapp.com/';
+
+
+
 }
 
 
