@@ -1,10 +1,30 @@
 
 export class BasePage {
-    
-    // @param path path of the sub page (e.g. /path/to/page.html)
-    open (path: string) {
-         browser.url(path)
+       
+   public async openUrl (path: string) {
+        await browser.url(path)
     }
+
+    public async getElement(element: string) {
+        return await $(element);
+      }
+      
+    public async getElements(element: string) {
+      return await $$(element);
+    }
+
+    public async clickElement(element: string): Promise<void> {
+       (await this.getElement(element)).click();
+    }
+
+    public async getValue(element: string){
+       await this.getElement(element)
+    }
+
+    public async getUrl() {
+       return await browser.getUrl();
+    }
+
     
 }
 
