@@ -51,6 +51,8 @@ export const config: Options.Testrunner = {
     //
     specs: [
         './test/specs/**/*.ts'
+        // 'test/specs/RemoveElements.test.ts'
+        // 'test/specs/basicAuth.test.ts'
 
 
 

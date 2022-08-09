@@ -24,8 +24,6 @@ export class BasePage {
     public async getUrl() {
        return await browser.getUrl();
     }
-
     
 }
 
-export const Base = new BasePage();
