@@ -2,7 +2,7 @@ import axios from "axios";
 import {BasePage} from "./BasePage";
 import {mainUrl} from './MainPage'
 
-const brokenImagesLink = 'http://the-internet.herokuapp.com/broken_images';
+export const brokenImagesLink = 'http://the-internet.herokuapp.com/broken_images';
 
 export class BrokenImagesPage extends BasePage {
 
