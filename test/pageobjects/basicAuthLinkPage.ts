@@ -10,7 +10,7 @@ class BasicAuthPage extends BasePage {
         public get Congtext() {return $('//*[@id="content"]/div/p')}
 
         public async openUrl(){
-        super.openUrl('https://'+user+':'+password+'@'+basicAuthLinkLink);
+            await super.openUrl('https://'+user+':'+password+'@'+basicAuthLinkLink);
     }
 
 }
