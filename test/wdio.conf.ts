@@ -53,7 +53,8 @@ export const config: Options.Testrunner = {
         // './test/specs/**/*.ts'
         // 'test/specs/RemoveElements.test.ts'
         // 'test/specs/basicAuth.test.ts'
-        'test/specs/BrokenImages.test.ts'
+        // 'test/specs/BrokenImages.test.ts'
+        'test/specs/Checkboxes.test.ts'
 
 
 

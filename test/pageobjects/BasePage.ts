@@ -1,7 +1,7 @@
 
 export class BasePage {
        
-   public async openUrl (path: string) {
+   public async openUrl (path: string) : Promise<void> {
         await browser.url(path)
     }
 
