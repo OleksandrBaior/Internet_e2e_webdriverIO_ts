@@ -21,5 +21,4 @@ describe('BrokenImages', () => {
         await Main.brokenImagesLink.click();
         expect(await BrokenImages.getUrl()).to.be.equal(brokenImagesLink);
     });
-        
 });

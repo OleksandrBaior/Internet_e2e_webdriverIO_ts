@@ -54,7 +54,8 @@ export const config: Options.Testrunner = {
         // 'test/specs/RemoveElements.test.ts'
         // 'test/specs/basicAuth.test.ts'
         // 'test/specs/BrokenImages.test.ts'
-        'test/specs/Checkboxes.test.ts'
+        // 'test/specs/Checkboxes.test.ts'
+        'test/specs/ContextMenu.test.ts'
 
 
 
@@ -241,6 +242,7 @@ export const config: Options.Testrunner = {
      */
      before () {
         require('expect-webdriverio').setOptions({ wait: 5000 })
+        browser.maximizeWindow()
     },
     /**
      * Runs before a WebdriverIO command gets executed.

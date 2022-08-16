@@ -10,8 +10,6 @@ export class AddRemoveElementsPage extends BasePage {
     public get deleteButton (){return $('//*[@id="elements"]/button')}
     public get deleteButtonElements (){return $$('//*[@id="elements"]/button')}
 
-   
-    
     public async openUrl() {
        await super.openUrl(AddRemoveElementsLink)
     }

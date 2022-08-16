@@ -8,7 +8,6 @@ describe('Checkboxes', () => {
         await Checkboxes.openUrl(Checkboxes.checkboxLink);
         await Checkboxes.clickCheckbox1();
         expect(await Checkboxes.checkbox1.isSelected()).to.be.true;
-
     });
 
     it('shuold click checkbox2', async () => {
@@ -23,5 +22,7 @@ describe('Checkboxes', () => {
         await (await Main.checkboxesLink).click();
         expect(await Checkboxes.getUrl()).to.be.equal(Checkboxes.checkboxLink);
     });
+
     
+
 });
