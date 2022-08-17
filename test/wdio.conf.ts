@@ -55,7 +55,10 @@ export const config: Options.Testrunner = {
         // 'test/specs/basicAuth.test.ts'
         // 'test/specs/BrokenImages.test.ts'
         // 'test/specs/Checkboxes.test.ts'
-        'test/specs/ContextMenu.test.ts'
+        // 'test/specs/ContextMenu.test.ts'
+        // 'test/specs/disappearingElements.test.ts'
+        // 'test/specs/DisappearingElements.test.ts'
+        'test/specs/DragAndDrop.test.ts'
 
 
 
