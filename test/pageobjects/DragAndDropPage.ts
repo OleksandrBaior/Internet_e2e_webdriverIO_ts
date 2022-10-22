@@ -9,9 +9,8 @@ class DragAndDropPage extends BasePage {
     public async dragAndDrop() {
         let elemA = await $("#column-a")
         let elemB = await $("#column-b")
-        await browser.pause(2000);
-        // await elemA.dragAndDrop(elemB) https://github.com/webdriverio/webdriverio/issues/4134 (wait for answer)
-        await browser.pause(2000);
+        await elemA.dragAndDrop(elemB) //https://github.com/webdriverio/webdriverio/issues/4134 (wait for answer)
+
     }
     
 }
