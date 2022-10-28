@@ -23,5 +23,5 @@ jobs:
     - name: Install Dependencies
       run: npm install -g
     - name: Start testing
-      run: wdio run test/wdio.conf.ts
+      run: npm run test
   
