@@ -1,0 +1,25 @@
+#-----------------------------
+# GitHub action --> Manually run a workflow
+#
+#-----------------------------
+name: CI
+
+on:
+  workflow_dispatch:
+  
+jobs:
+
+  my_job:
+    name: e2e testing
+    runs-on: windows-latest
+    
+    steps:
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+         node-version: '10.x'
+    - name: Install Dependencies
+      run: npm install
+    - name: Start testing
+      run: npm run test
+  
