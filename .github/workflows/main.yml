@@ -2,7 +2,7 @@
 # GitHub action --> Manually run a workflow
 #
 #-----------------------------
-name: CI
+name:  GitHub action
 
 on:
   workflow_dispatch:
@@ -14,12 +14,13 @@ jobs:
     runs-on: windows-latest
     
     steps:
+    - uses: actions/checkout@v3
     - name: Setup Node
       uses: actions/setup-node@v1
       with:
          node-version: '10.x'
     - name: Install Dependencies
-      run: npm install
+      run: npm install -g
     - name: Start testing
       run: npm run test
   
