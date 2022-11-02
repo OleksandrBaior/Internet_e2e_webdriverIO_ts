@@ -13,7 +13,7 @@ jobs:
 
   my_job:
     name: e2e testing
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     
     - name: Setup Node.js environment
