@@ -19,7 +19,7 @@ jobs:
                          node-version: '16.16.0'
        
                    - name: Install Dependencies
-                     run: npm ci
+                     run: npm c
       
 #          - name: Start testing
 #            run: npm run test
