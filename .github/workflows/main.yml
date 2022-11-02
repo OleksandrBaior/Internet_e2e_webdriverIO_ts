@@ -1,49 +1,49 @@
-# #-----------------------------
-# # GitHub action --> Manually run a workflow
-# #
-# #-----------------------------
-# name:  GitHub action
-
-# on:
-#   push:
-#     branches:
-#     - main
-# jobs:
-#   my_job:
-#     name: e2e testing
-#     runs-on: ubuntu-latest
-#     steps:
-#          - name: Setup Node.js environment
-#          - uses: actions/checkout@v2
-#          - uses: actions/setup-node@v2
-#            with:
-#                node-version: '16.16.0'
-      
-#          - name: Install Dependencies
-#            run: npm ci
-      
-#          - name: Start testing
-#            run: npm run test
-
-name: Run Tests and Generate report
+#-----------------------------
+# GitHub action --> Manually run a workflow
+#
+#-----------------------------
+name:  GitHub action
 
 on:
   push:
     branches:
     - main
-
 jobs:
-    testing_internet: # Name of the job
-        runs-on: ubuntu-latest # Choosing OS
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v2
-              with:
-                  node-version: '16.16.0' # In command line run "node -v" and choose your version
-                  cache: 'npm'
-            #Install all dependencies
-            - name: Install dependencies
-              run: npm ci
-            #Run tests
-            - name: Run tests
-              run: npm run test
+      my_job:
+             name: e2e testing
+             runs-on: ubuntu-latest
+             steps:
+               - name: Setup Node.js environment
+               - uses: actions/checkout@v2
+               - uses: actions/setup-node@v2
+                 with:
+                      node-version: '16.16.0'
+       
+#           - name: Install Dependencies
+#            run: npm ci
+      
+#          - name: Start testing
+#            run: npm run test
+
+# name: Run Tests and Generate report
+
+# on:
+#   push:
+#     branches:
+#     - main
+
+# jobs:
+#     testing_internet: # Name of the job
+#         runs-on: ubuntu-latest # Choosing OS
+#         steps:
+#             - uses: actions/checkout@v2
+#             - uses: actions/setup-node@v2
+#               with:
+#                   node-version: '16.16.0' # In command line run "node -v" and choose your version
+#                   cache: 'npm'
+#             #Install all dependencies
+#             - name: Install dependencies
+#               run: npm ci
+#             #Run tests
+#             - name: Run tests
+#               run: npm run test
