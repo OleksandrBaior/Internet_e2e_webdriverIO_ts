@@ -50,7 +50,7 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-        // './test/specs/**/*.ts'
+        './test/specs/**/*.ts'
         // 'test/specs/RemoveElements.test.ts'
         // 'test/specs/basicAuth.test.ts'
         // 'test/specs/BrokenImages.test.ts'
@@ -58,7 +58,7 @@ export const config: Options.Testrunner = {
         // 'test/specs/ContextMenu.test.ts'
         // 'test/specs/disappearingElements.test.ts'
         // 'test/specs/DisappearingElements.test.ts'
-        'test/specs/DragAndDrop.test.ts'
+        // 'test/specs/DragAndDrop.test.ts'
 
 
 
