@@ -8,6 +8,7 @@
         "@wdio/local-runner": "^7.20.6",
         "@wdio/mocha-framework": "^7.20.3",
         "@wdio/spec-reporter": "^7.20.3",
+        "allure-commandline": "^2.18.1",
         "axios": "^0.27.2",
         "chai": "^4.3.6",
         "ts-node": "^10.9.1",
@@ -16,9 +17,13 @@
         "webdriverio": "^7.21.0"
     },
     "scripts": {
-        "test": "wdio run test/wdio.conf.ts"
+        "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs",
+        "test": "wdio run test/wdio.conf.ts",
+        "open-report": "allure open"
     },
     "devDependencies": {
-        "chromedriver": "^106.0.1"
+        "@wdio/allure-reporter": "^7.25.4",
+        "chromedriver": "^106.0.1",
+        "rimraf": "^3.0.2"
     }
 }
