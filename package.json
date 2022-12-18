@@ -19,7 +19,7 @@
     },
     "scripts": {
         "test": "wdio run test/wdio.conf.ts",
-        "openReport": "allure generate allure-results --clean && allure serve"
+        "generateOpenReport": "allure generate allure-results --clean && allure serve"
     },
     "devDependencies": {
         "@wdio/allure-reporter": "^7.25.4",
