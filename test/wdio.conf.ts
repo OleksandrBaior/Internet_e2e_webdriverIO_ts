@@ -54,8 +54,8 @@ export const config: Options.Testrunner = {
 //         './test/specs/**/*.ts'
         // 'test/specs/RemoveElements.test.ts'
         // 'test/specs/basicAuth.test.ts'
-        // 'test/specs/BrokenImages.test.ts'
-        'test/specs/Checkboxes.test.ts'
+        'test/specs/BrokenImages.test.ts'
+        // 'test/specs/Checkboxes.test.ts'
         // 'test/specs/ContextMenu.test.ts'
         // 'test/specs/disappearingElements.test.ts'
         // 'test/specs/DisappearingElements.test.ts'
@@ -195,7 +195,7 @@ export const config: Options.Testrunner = {
     ['allure', {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
     }]
     ],
 
@@ -263,6 +263,7 @@ export const config: Options.Testrunner = {
         require('expect-webdriverio').setOptions({ wait: 5000 })
         browser.maximizeWindow()
     },
+    
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -303,10 +304,11 @@ export const config: Options.Testrunner = {
      * @param {Boolean} result.passed    true if test has passed, otherwise false
      * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
-
-
+    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+        if (error) {
+            await browser.takeScreenshot();
+            }
+    },
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
@@ -349,26 +351,27 @@ export const config: Options.Testrunner = {
      */
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
-    onComplete: function() {
-        const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', 'allure-results', '--clean'])
-        return new Promise<void>((resolve, reject) => {
-            const generationTimeout = setTimeout(
-                () => reject(reportError),
-                5000)
+    // onComplete: function() {
+    //     const reportError = new Error('Could not generate Allure report')
+    //     const generation = allure(['generate', 'allure-results', "--clean"])
+    //     return new Promise<void>((resolve, reject) => {
+    //         const generationTimeout = setTimeout(
+    //             () => reject(reportError),
+    //             5000)
 
-            generation.on('exit', function(exitCode) {
-                clearTimeout(generationTimeout)
+    //         generation.on('exit', function(exitCode) {
+    //             clearTimeout(generationTimeout)
 
-                if (exitCode !== 0) {
-                    return reject(reportError)
-                }
+    //             if (exitCode !== 0) {
+    //                 return reject(reportError)
+    //             }
 
-                console.log('Allure report successfully generated')
-                resolve()
-            })
-        })
-    }
+    //             console.log('Allure report successfully generated')
+    //             resolve()
+    //         })
+    //     })
+    // }
+    
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session
