@@ -27,6 +27,9 @@ jobs:
                    - name: Start testing
                      run: npm run test
 
+                   - name: Generate and open report
+                     run: npm run generateOpenReport
+
 # name: Run Tests and Generate report
 
 # on:
