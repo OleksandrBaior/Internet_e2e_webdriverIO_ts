@@ -11,6 +11,7 @@
         "allure-commandline": "^2.20.1",
         "axios": "^0.27.2",
         "chai": "^4.3.6",
+        "fs-extra": "^11.1.0",
         "ts-node": "^10.9.1",
         "typescript": "^4.7.4",
         "wdio-chromedriver-service": "^7.3.2",
@@ -18,9 +19,7 @@
     },
     "scripts": {
         "test": "wdio run test/wdio.conf.ts",
-        "openReport": "allure generate allure-results --clean && allure open",
-        "copyTrendReport": "mkdir allure-results/history && cp allure-report/history/* ./allure-results/history"
-       
+        "openReport": "allure generate allure-results --clean && allure serve"
     },
     "devDependencies": {
         "@wdio/allure-reporter": "^7.25.4",

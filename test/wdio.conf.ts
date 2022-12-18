@@ -1,5 +1,5 @@
-import type { Options } from '@wdio/types'
-const allure = require('allure-commandline')
+import type { Options } from '@wdio/types';
+const fs = require('fs-extra');
 
 export const config: Options.Testrunner = {
     //
@@ -351,26 +351,20 @@ export const config: Options.Testrunner = {
      */
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
-    // onComplete: function() {
-    //     const reportError = new Error('Could not generate Allure report')
-    //     const generation = allure(['generate', 'allure-results', "--clean"])
-    //     return new Promise<void>((resolve, reject) => {
-    //         const generationTimeout = setTimeout(
-    //             () => reject(reportError),
-    //             5000)
-
-    //         generation.on('exit', function(exitCode) {
-    //             clearTimeout(generationTimeout)
-
-    //             if (exitCode !== 0) {
-    //                 return reject(reportError)
-    //             }
-
-    //             console.log('Allure report successfully generated')
-    //             resolve()
-    //         })
-    //     })
-    // }
+    onComplete: function() {
+       
+        const srcDir = 'allure-report/history';
+        const destDir = 'allure-results/history';
+                                        
+        // To copy a folder or file, select overwrite accordingly
+        try {
+             fs.copySync(srcDir, destDir, { overwrite: true })
+             console.log('success!')
+        } 
+        catch (err) {
+             console.error(err)
+        }
+    }
     
     /**
     * Gets executed when a refresh happens.
